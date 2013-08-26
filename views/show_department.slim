@@ -1,0 +1,9 @@
+h1= @department.name
+p Manager Name: #{@department.manager}
+p Department_id: #{@department.department_id} 
+p <a href="/departments">back to Departments index</a>
+p <a href="/departments/#{@department.id}/edit">edit this Department</a>
+form action="/departments/#{@department.id}" method="POST"
+  input type="hidden" name="_method" value="DELETE"
+  input type="submit" value="delete this Department"
+

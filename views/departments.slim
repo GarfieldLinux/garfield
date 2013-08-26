@@ -1,0 +1,9 @@
+h1 My Department
+a href="/departments/new" Create a new  Department
+- if @departments.any?
+  ul#departments
+    -@departments.each do |department|
+       li <a href="/departments/#{department.department_id}"> Name: #{department.name} Manager : #{department.manager}</a>
+- else
+  p No Department have been created yet!
+

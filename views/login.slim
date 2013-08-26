@@ -1,0 +1,12 @@
+- if authorized?
+  == slim :home
+- else
+  div id="dialog-confirm" title="Login  V M S"
+    form action="/login" method="POST" name="login_form"
+       tr
+         label for="username" Username:
+         input#username type="text" name="username"
+       tr
+         label for="password" Password :
+         input#password type="password" name="password"
+

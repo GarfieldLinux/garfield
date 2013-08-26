@@ -1,0 +1,10 @@
+h1= @employee.name
+p Name: #{@employee.name}
+p Employee_id: #{@employee.employee_id} 
+p Department_id: #{@employee.department_id} 
+p <a href="/employees">back to Employees index</a>
+p <a href="/employees/#{@employee.id}/edit">edit this Employee</a>
+form action="/employees/#{@employee.id}" method="POST"
+  input type="hidden" name="_method" value="DELETE"
+  input type="submit" value="delete this Employee"
+

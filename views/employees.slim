@@ -1,0 +1,9 @@
+h1 My Eployee
+a href="/employees/new" Create a new  Employee
+- if @employees.any?
+  ul#employees
+    -@employees.each do |employee|
+       li <a href="/employees/#{employee.employee_id}"> Name: #{employee.name}Department : #{employee.department_id}</a>
+- else
+  p No Employee have been created yet!
+

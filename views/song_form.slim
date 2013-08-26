@@ -1,0 +1,21 @@
+label for="id"  id:
+input#id type="text" name="vacation[id]" value="#{@vacation.id}"
+br
+label for="employee_id"  employee_id:
+input#id type="text" name="vacation[employee_id]" value="#{@vacation.employee_id}"
+br
+label for="start_time" Start Date:
+input#start_time type="text" name="vacation[start_time]" value="#{@vacation.start_time.strftime("%m/%d/%Y") if @vacation.start_time}"
+
+label for="end_time" End Date:
+input#end_time type="text" name="vacation[end_time]" value="#{@vacation.end_time.strftime("%m/%d/%Y") if @vacation.end_time}"
+br
+label for="Reason" Reason:
+textarea#Reason name="vacation[reason]" == @vacation.reason
+br
+label for="status"  status:
+input#status type="text" name="vacation[status]" value="#{@vacation.status}"
+br
+
+input type="submit" value="Save Vacation"
+

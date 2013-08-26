@@ -1,0 +1,10 @@
+h1= @vacation.employee_id
+p Start Date:#{@vacation.start_time.strftime("%e %B %Y") if @vacation.start_time} 
+p End   Date: #{@vacation.end_time.strftime("%e %B %Y") if @vacation.end_time}
+pre= @vacation.reason
+p <a href="/vacations">back to vacation index</a>
+p <a href="/vacations/#{@vacation.id}/edit">edit this vacation</a>
+form action="/vacations/#{@vacation.id}" method="POST"
+  input type="hidden" name="_method" value="DELETE"
+  input type="submit" value="delete this vacation"
+

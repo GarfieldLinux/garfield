@@ -1,0 +1,5 @@
+h1 Edit Employee
+form method="POST" action="/employees/#{@employee.id}"
+  input type="hidden" name="_method" value="PUT"
+  == slim :employee_form
+

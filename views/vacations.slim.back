@@ -1,0 +1,9 @@
+h1 My Vacation
+a href="/vacations/new" Create a new  Vacation 
+- if @vacations.any?
+  ul#vacations
+    -@vacations.each do |vacation|
+      li NO:  <a href="/vacations/#{vacation.id}">#{vacation.id}</a> Employee_id: #{vacation.employee_id}
+- else
+  p No vacation have been created yet!
+

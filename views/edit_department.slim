@@ -1,0 +1,5 @@
+h1 Edit Department
+form method="POST" action="/departments/#{@department.id}"
+  input type="hidden" name="_method" value="PUT"
+  == slim :department_form
+

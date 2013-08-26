@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<!-- End of Meta -->
+		
+		<!-- Page title -->
+		<title>WMware employee vacation page</title>
+		<!-- End of Page title -->
+		
+		<!-- Libraries -->
+		<link type="text/css" href="css/layout.css" rel="stylesheet" />	
+		
+		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/easyTooltip.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+		<script type="text/javascript" src="js/hoverIntent.js"></script>
+		<script type="text/javascript" src="js/superfish.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="../flexigrid/js/flexigrid.js"></script>		
+ <script>
+		  $(document).ready(function() {
+		    $("#date1").datepicker();
+		  });
+		  </script>
+			<script>
+			  $(document).ready(function() {
+			    $("#date2").datepicker();
+			  });
+			 </script>
+     	<script>
+			  $(document).ready(function() {
+			    $("#username").background("red");
+			  });
+			 </script>
+	
+<script type="text/javascript">
+		$('.flexme1').flexigrid();
+		$('.flexme2').flexigrid({
+			height : 'auto',
+			striped : false
+		});
+
+		$(".flexme3").flexigrid({
+			url : 'http://localhost:9393/vacations/json',
+			dataType : 'xml',
+			colModel : [ {
+				display : 'ISO',
+				name : 'iso',
+				width : 40,
+				sortable : true,
+				align : 'center'
+			}, {
+				display : 'Name',
+				name : 'name',
+				width : 180,
+				sortable : true,
+				align : 'left'
+			}, {
+				display : 'Printable Name',
+				name : 'printable_name',
+				width : 120,
+				sortable : true,
+				align : 'left'
+			}, {
+				display : 'ISO3',
+				name : 'iso3',
+				width : 130,
+				sortable : true,
+				align : 'left',
+				hide : true
+			}, {
+				display : 'Number Code',
+				name : 'numcode',
+				width : 80,
+				sortable : true,
+				align : 'right'
+			} ],
+			buttons : [ {
+				name : 'Add',
+				bclass : 'add',
+				onpress : test
+			}, {
+				name : 'Delete',
+				bclass : 'delete',
+				onpress : test
+			}, {
+				separator : true
+			} ],
+			searchitems : [ {
+				display : 'ISO',
+				name : 'iso'
+			}, {
+				display : 'Name',
+				name : 'name',
+				isdefault : true
+			} ],
+			sortname : "iso",
+			sortorder : "asc",
+			usepager : true,
+			title : 'Countries',
+			useRp : true,
+			rp : 15,
+			showTableToggleBtn : true,
+			width : 700,
+			height : 200
+		});
+
+		function test(com, grid) {
+			if (com == 'Delete') {
+				confirm('Delete ' + $('.trSelected', grid).length + ' items?')
+			} else if (com == 'Add') {
+				alert('Add New Item');
+			}
+		}
+	</script>
+
+	
+		<!-- End of Libraries -->	
+	</head>
+	<body>
+		<!-- Container -->
+		<div id="container">
+		
+			<!-- Header -->
+			<div id="header">
+				
+				<!-- Top -->
+				<div id="top">
+					<!-- Logo -->
+					<div class="logo"> 
+						<a href="#" title="Employee Home" class="tooltip"><img src="assets/logo.png" alt="WMware" /></a> 
+					</div>
+					<!-- End of Logo -->
+					
+					<!-- Meta information -->
+					<div class="meta">
+						<p>Welcome, Roger! <a href="#" title="1 new private message from Elaine!" class="tooltip">1 new message!</a></p>
+						<ul>
+							<li><a href="#" title="End session" class="tooltip"><span class="ui-icon ui-icon-power"></span>Logout</a></li>
+							<li><a href="#" title="Change current settings" class="tooltip"><span class="ui-icon ui-icon-wrench"></span>Settings</a></li>
+							<li><a href="#" title="Go to your account" class="tooltip"><span class="ui-icon ui-icon-person"></span>My account</a></li>
+						</ul>	
+					</div>
+					<!-- End of Meta information -->
+				</div>
+				<!-- End of Top-->
+			
+			
+			</div>
+			<!-- End of Header -->
+			
+			<!-- Background wrapper -->
+			<div id="bgwrap">
+		
+				<!-- Main Content -->
+				<div id="content">
+					<div id="main">
+					<h1>Welcome, <span id="username">Roger</span>!</h1>				
+					<h2>Employee Vacation infomation:</h2>
+					<div class="pad20">
+					
+						<!-- Tabs -->
+						<div id="tabs">
+							<ul>
+								<li><a href="#tabs-1">Vacation Form</a></li>
+								<li><a href="#tabs-2">Vacation History</a></li>
+							</ul>
+							
+							<!-- First tab -->
+							<div id="tabs-1">
+									<!-- Form -->
+									<form method="post" action="#">
+										<!-- Fieldset -->
+										<fieldset>
+											<legend>Fill out fieldset for your vacation:</legend>
+											<p>
+												<label for="lf">Absent Reason: </label>
+												<input class="lf" name="lf" type="text" value="" />
+												<!--<span class="field_desc">Field description</span> -->
+											</p>
+											<p>
+												<label for="dropdown">Select Manager: </label>
+												<select name="dropdown" class="dropdown">
+													<option>Please select a manager</option>
+													<option>Nelson Lai</option>
+													<option>Somebody</option>
+													<option>Other</option>
+												</select>
+											</p>
+											<p>
+											<div>
+											<label for="sf">Vacation start date: </label>
+											<input class="sf" name="sf" type="text" value="" id="date1" />
+											<label for="sf">Vacation end date: </label>
+											<input class="sf" name="sf" type="text" value="" id="date2" />
+											</div>
+											</p>
+											<p>
+												<input class="button" type="submit" value="Submit" />
+												<input class="button" type="reset" value="Reset" />
+											</p>
+										</fieldset>
+										<!-- End of fieldset -->
+									</form>
+									<!-- End of Form -->	
+									<p>For this page,employees could fill out a concrete application of vacation.</p>
+								</div>
+								<!-- End of First tab -->
+								
+								<!-- Second tab -->
+								<div id="tabs-2">
+									<p>For this page,employee could see all of his vacation history.</p>
+									<table   id="flexme3" style="display:none" ></table>
+								</div>
+								<!-- End of Second tab -->
+							</div>
+							<!-- End of Tabs -->
+						</div>	
+						</div>  <!--div id="main" -->
+				</div>
+				<!-- End of Main Content -->
+				
+				<!-- Sidebar -->
+				<div id="sidebar">
+				
+					<h2>Notification</h2>
+					<!-- Accordion -->
+					<div id="accordion">
+						<div>
+							<h3><a href="#" title="First slide" class="tooltip">See</a></h3>
+							<div>No Notification now!</div>
+						</div>
+					</div>
+					<!-- End of Accordion-->
+						
+					<h2>Calender</h2>
+					<!-- Datepicker -->
+					<div id="datepicker"></div>
+					<!-- End of Datepicker -->
+
+				
+				</div>
+				<!-- End of Sidebar -->
+				
+			</div>
+			<!-- End of bgwrap -->
+		</div>
+		<!-- End of Container -->
+		
+		<!-- Footer -->
+		<div id="footer">
+			<p class="mid">
+				<a href="#" title="Top" class="tooltip">Top</a>&middot;<a href="#" title="Main Page" class="tooltip">Home</a>&middot;<a href="#" title="Change current settings" class="tooltip">Settings</a>&middot;<a href="#" title="End administrator session" class="tooltip">Logout</a>
+			</p>
+			<p class="mid">
+				<!-- Change this to your own once purchased -->
+				&copy; WMware 2013. All rights reserved.
+				<!-- -->
+			</p>
+		</div>
+		<!-- End of Footer -->
+		<table   id="flexme3"  >
+<tr><td>I  am   here  </td></tr>
+   </table>
+
+	</body>
+</html>
+
+
