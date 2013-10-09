@@ -1,0 +1,101 @@
+body {
+    font-family: source-sans-pro, sans-serif;
+    font-size: 15px;
+  /*  background: url(../img/wood.jpg) #efefef; */
+    text-align: center;
+
+    /*padding-top: 60px;*/
+    /*padding-bottom: 40px;*/
+}
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow: auto;
+    width: 230px;
+}
+
+.list-item {
+    padding-top: 6px;
+    padding-left: 56px;
+}
+
+.no-reports {
+    display: none;
+}
+
+
+.ui-datepicker
+    {
+        width: 23em;
+        padding: .2em .2em 0;
+        font-size: 70%;
+        display: none;
+    }
+    
+    #calendar
+    {
+        width:100%%;
+        margin: 0 auto;
+    }
+    #loading
+    {
+        top: 0px;
+        right: 0px;
+    }
+    
+    .tooltip
+    {
+        padding-bottom: 25px;
+        padding-left: 25px;
+        width: 100px !important;
+        padding-right: 25px;
+        display: none;
+        background: #999;
+        height: 70px;
+        color: red;
+        font-size: 12px;
+        padding-top: 25px;
+        z-order: 10;
+    }
+    .ui-timepicker-div .ui-widget-header
+    {
+        margin-bottom: 8px;
+    }
+    .ui-timepicker-div dl
+    {
+        text-align: left;
+    }
+    .ui-timepicker-div dl dt
+    {
+        height: 25px;
+        margin-bottom: -25px;
+    }
+    .ui-timepicker-div dl dd
+    {
+        margin: 0 10px 10px 65px;
+    }
+    .ui-timepicker-div td
+    {
+        font-size: 90%;
+    }
+    .ui-tpicker-grid-label
+    {
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    .ui-timepicker-rtl
+    {
+        direction: rtl;
+    }
+    .ui-timepicker-rtl dl
+    {
+        text-align: right;
+    }
+    .ui-timepicker-rtl dl dd
+    {
+        margin: 0 65px 10px 10px;
+    }
+
+

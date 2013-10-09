@@ -1,0 +1,35 @@
+<div id="details" class="span7">
+ <p><img src="pics/Kathleen_Byrne.jpg" width="160" height="160"/></p> 
+    <h3><%= user_id %></h3>
+    <h4><%= daysoff_start_date %> --- <%= daysoff_end_date  %>   </h4>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <td>Start Date:</td>
+            <td><i class="icon-home"></i> <%= daysoff_start_date %></td>
+        </tr>
+        <tr>
+            <td>End   Date:</td>
+            <td><i class="icon-headphones"></i> <%= daysoff_end_date %></td>
+        </tr>
+        <tr>
+            <td>Reason    :</td>
+            <td><i class="icon-envelope"></i> <%= applied_reason %></a></td>
+        </tr>
+    </table>
+
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">Some message</h4>
+    </div>
+</div>
+
+<div class="span5">
+    <div class="well">
+        <h3 class="modal-header">Vacations Detail </h3>
+        <ul class="nav nav-list report-list"></ul>
+        <div class="alert alert-info no-reports">
+            <h4 class="alert-heading">Info</h4>
+            <%= applied_reason %> has no direct reports
+        </div>
+    </div>
+</div>

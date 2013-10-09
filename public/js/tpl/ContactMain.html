@@ -1,0 +1,45 @@
+ <div id="details" class="span7">
+  <p><img src="/pics/default.jpg" width="160" height="160"/></p>
+     <br>
+     <table class="table table-striped">
+         <tr>
+             <td>Full Name:</td>
+             <td><i class="icon-home"></i> ${ full_name  }</td>
+         </tr>
+         <tr>
+             <td>Total days:</td>
+             <td><i class="icon-headphones" id= "countall" name="countall" ></i> ${ count } </td>
+         </tr>
+         <tr>
+             <td>Manager   :</td>
+             <td><i class="icon-envelope"></i></a>${ manager  }</td>
+         </tr>
+     </table>
+ 
+     <div class="alert alert-warning   managerbox "  style="display:none"  id="managerbox" >
+         <input type="checkbox" id="allcheckbox" name="allcheckbox" value="cool_radio" /> 显示组员信息
+         <h2>Team Members : </h2>
+         <h4 class="alert-heading" align='left'> ${ teammember }</h4>
+     </div>
+ </div>
+
+
+<div class="span5">
+    <div class="well"   style="height: 100%;" >
+ <!--       <h3 class="modal-header">Employee Vacations </h3>  -->
+       <div> <ul class="nav nav-list report-listall"></ul>  </div>
+
+
+<div class='report-calendar'></div><!-- 显示日期控件 -->
+
+
+    <div class="alert alert-info no-reports">
+            <h4 class="alert-heading">Info</h4>
+             has no  vacation message 
+        </div>
+    </div>
+</div>
+
+
+
+

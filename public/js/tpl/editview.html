@@ -1,0 +1,39 @@
+<div class='mask'>
+<div class="modal">
+<div class="modal-header">
+    <a href="#" class="close">&times;</a>
+    <h3>Edit vacation</h3>
+</div>
+<div class="modal-body">
+    <form>
+        <fieldset>
+        
+            <div class="clearfix">
+                <label for="startime">Begin Time  </label>
+                <div class="input">
+                    <input name="startime" type="text"  id="releaseDate" value= ${startime} class="span6" />
+                </div>
+            </div><!-- /clearfix -->                    
+        
+            <div class="clearfix">
+                <label for="endtime">End Time</label>
+                <div class="input">
+                    <input name="endtime" type="text"  id="releaseDate1" value=${endtime}   class="span6" />
+                </div>
+            </div><!-- /clearfix -->
+            
+            <div class="clearfix">
+                <label for="reason">Description</label>
+                <div class="input">
+                    <input name="reason" type="text" value= ${reason}  class="span6" />
+                </div>
+            </div><!-- /clearfix -->
+        
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="reset" class="btn cancel">Cancel</button> <button type="submit" class="btn primary save">Save Changes</button>
+</div>
+</div>
+</div>
