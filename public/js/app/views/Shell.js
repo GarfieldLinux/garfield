@@ -6,7 +6,6 @@ define(function (require) {
         _                   = require('underscore'),
         Backbone            = require('backbone'),
         EditView            = require('app/views/editview'),
-        EmployeeListView    = require('app/views/EmployeeList'),
         models              = require('app/models/employee'),
         tpl                 = require('text!tpl/Shell.html'),
 
@@ -21,8 +20,6 @@ define(function (require) {
 
         render: function () {
             this.$el.html(template());
-            var listView = new EmployeeListView({collection: this.employeeList, el: $(".employee-list", this.el)});
-            listView.render();
             $menuItems = $('.navbar .nav li', this.el);
             return this;
         },
@@ -37,7 +34,6 @@ define(function (require) {
 
      addvacation: function(e) {
          e.preventDefault();
-         //router.navigate("bookmarks", true);
         var edview = new EditView({ model: new models.Employee() });
         alert(JSON.stringify(edview));
         edview.render();
@@ -51,7 +47,6 @@ define(function (require) {
             url: '/V1/logout',
             dataType: 'json',
             success: function(data) {
-            //alert(JSON.stringify(Appuser));
   
             $.cookie('full_name',null, {expires:7,path:'/'});
             $.cookie('status',null, {expires:7,path:'/'});
